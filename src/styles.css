@@ -1,1 +1,107 @@
-/* Add application styles & imports to this file! */
+.navbar-vertical .navbar-brand-img,
+.navbar-vertical .navbar-brand > img
+{
+    display: block;  /*img should be center*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    max-height:6rem;
+}
+.navbar-vertical
+{
+    position: fixed; /* make to fixed sidebar*/
+    min-width: 250px;
+    max-width: 250px;
+    height:100%;
+    padding: 0 !important;
+    background:linear-gradient(to bottom,#fc466b,#ff0080),url(assets/img/brand/sidenav-2.jpg);
+    background-blend-mode:hard-light ;
+    }
+.main-content
+{   
+    margin-left: 250px;
+}
+
+.navbar > .container-fluid
+{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+    padding:0 !important;
+    
+}
+
+.navbar-nav
+{
+    display: block;
+}
+.profile-details .avatar
+{
+    width: 75px;
+    max-width: 100px;
+    height:75px;
+    max-height: 100px;
+    border-radius: 70%;
+}
+.profile-details .card
+{ 
+    width:100%;
+    background-color: transparent;
+    color:whitesmoke !important;
+    border: none;
+}
+.profile-details .card-footer
+{
+    width:100%;
+    background-color: transparent;
+    
+}
+.profile-details .card-footer > button
+{
+    border:none;  
+    color: whitesmoke;
+}
+.navigation .nav-item
+{
+    text-align: left;
+    padding-left: 1.15rem;
+   
+}
+.navigation .material-icons
+{
+    font-size: 24px;
+    
+}
+.navigation .nav-link {
+    padding:0.9rem 0;
+    font-size: 18px;
+    color:whitesmoke !important;
+}
+.navigation .nav-link i
+{
+    padding-right: 0.75rem;
+    font-size: 24px;
+}
+.navigation .nav-item:active
+{
+    border:1px solid #fc466b;
+    background-color: snow;
+    border-left-color: beige;
+    border-left: 4px;
+    border-width: 100%;
+}
+.navigation .nav-item:hover
+{
+    border:1px solid #fc466b;
+    background-color: snow;
+    border-width: 100%;
+}
+.navigation .nav-item .nav-link:hover
+{
+    color: #ff0080 !important;
+}
+.navigation .nav-item .nav-link:active
+{
+    color: #ff0080 !important;
+}

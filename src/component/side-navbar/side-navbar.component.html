@@ -1,1 +1,69 @@
-hello dear
+<nav class="navbar navbar-vertical navbar-expand-md navbar-light bg-info">
+    <div class="container-fluid ">
+       <div class="row">
+
+           <div class="col-sm-12">
+
+                    <!--Toogler-->
+                    <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed"
+                    aria-controls="sidenav-collapse-main">
+                    <span class="navbar-toggler-icon"></span></button>
+
+                    <!--brand-->
+                    <a class="navbar-brand" routerLinkActive="active" [routerLink]="['/']">
+                    <img src="../../assets/img/brand/red.png" class="navbar-brand-img" alt="...">
+                    </a>
+           </div>
+
+           <div class="profile-details  col-sm-12">
+             <div class="dropdown-divider"></div>
+              <div class="card ">
+                <div class="card-block text-center">
+                    <img src="../../assets/img/brand/profile.jpg" class="avatar pb-1">
+                    <h6 class="card-title pb-1">First Name</h6>
+                    <p class="card-subtitle">Email</p>
+                </div>
+                <div class="card-footer text-center">
+                    <ng-template #UserProfile >Profile</ng-template>
+                    <ng-template #message>Chat</ng-template>
+                    <ng-template #logout>Log Out</ng-template>
+                    <button [ngbTooltip]="UserProfile" placement="top" type="button" class="btn btn-outline-dark mr-3"><span class="material-icons" >person</span></button>  
+                    <button [ngbTooltip]="message" placement="bottom" type="button" class="btn btn-outline-dark mr-3"><span class="material-icons" >chat_bubble_outline</span></button>
+                    <button [ngbTooltip]="logout" placement="right" type="button" class="btn btn-outline-dark mr-3"><span class="material-icons" >settings_power</span></button>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+           </div>
+
+           <div class="col-sm-12">
+
+             <!--Navigation-->
+                <ul class="navbar-nav navigation">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="material-icons">home</i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="material-icons">policy</i>About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fab fa-rocketchat"></i>Chat With us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fas fa-cog"></i>Setting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="material-icons">feedback</i>Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fas fa-question-circle"></i>Help</a>
+                    </li>
+                </ul>              
+            </div>
+            <div class="copyright col-sm-12 text-center text-muted">
+                <div class="dropdown-divider"></div>
+                <p >All Rights are Reserved.</p>
+                <p>Trademark &copy;2020</p>
+            </div>
+       </div>
+    </div>
+</nav>
