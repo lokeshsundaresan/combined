@@ -4,8 +4,10 @@
     display: block;  /*img should be center*/
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
-    max-height:6rem;
+    margin-top:0.6rem;
+    margin-bottom: 0.6rem;
+    width: 50%;
+    max-height:5rem;
 }
 .navbar-vertical
 {
@@ -14,7 +16,7 @@
     max-width: 250px;
     height:100%;
     padding: 0 !important;
-    background:linear-gradient(to bottom,#fc466b,#ff0080),url(assets/img/brand/sidenav-2.jpg);
+    background:linear-gradient(to bottom,#fc466b,#ff0080),url(./assets/img/brand/sidenav-2.jpg);
     background-blend-mode:hard-light ;
     }
 .main-content
@@ -22,7 +24,7 @@
     margin-left: 250px;
 }
 
-.navbar > .container-fluid
+.navbar-vertical > .container-fluid
 {
     display: flex;
     flex-direction: column;
@@ -32,7 +34,7 @@
     
 }
 
-.navbar-nav
+.navigation
 {
     display: block;
 }
@@ -104,4 +106,17 @@
 .navigation .nav-item .nav-link:active
 {
     color: #ff0080 !important;
+}
+
+/* End of SideNavigation-Bar */
+
+
+/* start of Top Navigation-Bar */
+
+.main-content
+{
+
+    background: snow; 
+    min-height: 100%;
+    overflow-x:hidden !important;
 }

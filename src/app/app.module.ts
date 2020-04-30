@@ -8,13 +8,15 @@ import { appRoutingModule } from './app.routing';
 import { SideNavbar } from '../component/side-navbar/side-navbar.component';
 import { Navbar } from '../component/main-navbar/navbar.component';
 import { DashBoard } from '../dashboard/dashboard.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
   imports:      [ BrowserModule, 
                   ReactiveFormsModule, 
                   FormsModule , NgbModule,
-                  appRoutingModule ],
+                  appRoutingModule,
+                  FontAwesomeModule ],
   declarations: [ AppComponent,SideNavbar,Navbar,DashBoard],
   bootstrap:    [ AppComponent ]
 })

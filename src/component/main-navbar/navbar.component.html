@@ -1,10 +1,48 @@
-<div class="page-content">
-    <p>
-    Conclusion
-    I hope this tutorial has helped you to understand how to implement a Bootstrap sidebar to your project. If you liked the article - let your friends know about it.
-    
-    If you have enjoyed this Bootstrapious tutorial, have a look at my tutorials on How to build a contact form or Bootstrap navbar.
-    
-    Thanks for reading :)
-    </p>
-    </div>
+<nav class="navbar top-navigation navbar-expand-lg navbar-light">
+       <!--brand-->
+       <!--Toogler-->
+       <a type="button" [ngbTooltip]="menu"
+               aria-controls="">
+       <span class="navbar-toggler-icon"></span></a>
+
+       <!--Navigation-->
+      <ul class="navbar-nav ml-auto">
+           <!--Search Form-->
+          <form class="form-inline my-2">
+            <input class="form-control mx-5" type="search" [ngbTooltip]="search" placeholder="Search.." autocomplete="off" aria-label="Search">
+          </form>
+          <!--Nav items-->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" [ngbTooltip]="fullscreen" routerLinkActive="active"><i class="material-icons">fullscreen</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngbTooltip]="chat"><i class="material-icons">chat_bubble_outline</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"[ngbTooltip]="notification"><i class="material-icons">notification_important</i></a>
+          </li>
+          <!--Ngb Dropdown-->
+          <li class="nav-item"  ngbDropdown  [open]="false">
+            <a class="nav-link"  [ngbTooltip]="UserProfile" routerLinkActive="active" id="profile" display="Profile">
+              <img src="../../assets/img/brand/profile.jpg" ngbDropdownToggle class="avatar-profile">
+            </a>
+             <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="profile">
+              <a ngbDropdownItem  routerLinkActive="active"  routerLink="/profile"><span class="fa fa-user pr-3" aria-hidden="true"></span>My Profile</a>
+              <a ngbDropdownItem routerLink="/edit-profile"  routerLinkActive="active"><span class="far fa-edit pr-3"></span>Edit Profile</a>
+              <a ngbDropdownItem href="#"><span class="fas fa-key pr-3" aria-hidden="true"></span>Change Password</a>
+              <a ngbDropdownItem href="#"><span class="far fa-envelope pr-3"></span> Inbox</a>
+              <a class="dropdown-item"><span class="fas fa-cog pr-3"></span>Setting</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item"><span class="fas fa-running pr-3"></span>Log Out</a>
+            </div>            
+          </li>
+      </ul>
+        <!--Ngb Tooltips-->
+        <ng-template #UserProfile >Profile</ng-template>
+        <ng-template #notification>Notification</ng-template>
+        <ng-template #chat >Message</ng-template>
+        <ng-template #fullscreen >Full Screen</ng-template>
+        <ng-template #search >Search Here friends and messages</ng-template>
+        <ng-template #menu>Menu</ng-template>
+        
+</nav>
