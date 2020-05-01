@@ -9,15 +9,37 @@ import { SideNavbar } from '../component/side-navbar/side-navbar.component';
 import { Navbar } from '../component/main-navbar/navbar.component';
 import { DashBoard } from '../dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from 'pages/login/login.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UserService } from 'api_services/user_control/_user.service';
+import { ProfileService } from 'api_services/user_control/profile.service';
+import { Jwt } from 'api_services/jwt.service';
+import { ErrorInterceptor } from 'api_services/error.service';
+import { RegisterComponent } from 'pages/register/register.component';
 
 
 @NgModule({
   imports:      [ BrowserModule, 
                   ReactiveFormsModule, 
                   FormsModule , NgbModule,
-                  appRoutingModule,
+                  appRoutingModule,HttpClientModule,
                   FontAwesomeModule ],
-  declarations: [ AppComponent,SideNavbar,Navbar,DashBoard],
+  declarations: [ AppComponent,SideNavbar,Navbar,DashBoard,LoginComponent,RegisterComponent],
+  providers:[UserService,  
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:ProfileService,
+    multi:true
+  },
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:Jwt,
+    multi:true
+  },
+   { provide: HTTP_INTERCEPTORS,
+     useClass: ErrorInterceptor,
+      multi: true }
+ ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
