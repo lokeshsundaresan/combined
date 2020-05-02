@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'api_services/user_control/_user.service';
+import { User } from 'interface/user';
 
 @Component({
     selector: 'nav-bar',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
     
 })
 export class Navbar implements OnInit {
-    constructor() { }
+    currentUser:User
+    constructor(private user:UserService) {
+        this.user.currentUser.subscribe(data=>{
+            this.currentUser=data;
+        })
+     }
 
     ngOnInit(): void { }
 }
