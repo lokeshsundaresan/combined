@@ -26,13 +26,5 @@ export class Jwt implements HttpInterceptor {
     
   
   }
-   addToken(request:HttpRequest<any>,token:string)
-     {
-          return request.clone({
-                                setHeaders: {
-                               'Authorization': `Bearer ${token}`
-                               }
-                             });
-     }
-    
+
 }
