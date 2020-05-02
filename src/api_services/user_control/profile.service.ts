@@ -31,9 +31,8 @@ export class ProfileService implements HttpInterceptor{
   {
     return this.http.post<any>(this._getProfile,User)
                      .pipe(map(user=>{
-                       
                        this.ProfileUserSubject.next(user);
-                       localStorage.setItem('User', JSON.stringify(User));
+                       localStorage.setItem('User', JSON.stringify(user));
                      }));
   }
 
