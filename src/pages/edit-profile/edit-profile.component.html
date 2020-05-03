@@ -1,0 +1,99 @@
+<div class="container-fluid mt-3 mb-4">
+
+  <form [formGroup]="profileForm" class="w-75 form-outer px-4 py-2 mx-auto my-auto" (ngSubmit)="onSubmit()">
+        <h6 class="text-center mt-3 mb-4">Edit Profile</h6>
+        <hr>
+    <div  class="row">
+
+      <div class="col-md-4 ">
+
+       <div class="profile-img">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" width="100%" height="450px">
+            <div class="file text-center btn-lg btn-primary">
+              Change Photo
+              <input type="file" formControlName="pics" accept="image/*">
+            </div>
+          </div>
+
+      </div>
+
+      <div class="col-md-8 my-auto">
+
+       
+        <div class="form-group">
+               <label for="username">User ID</label>
+              <input type="text" readonly class="form-control" placeholder="UserName" formControlName="username"  >
+        </div>
+        <div class="form-row">
+            <div class="col-md-6">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" placeholder="First name" formControlName="firstname" [ngClass]="{ 'is-invalid': f.firstname.errors && f.firstname.touched}">
+                <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstname.errors.required">First Name is required</div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last name" formControlName="lastname" [ngClass]="{ 'is-invalid': f.lastname.errors && f.lastname.touched}" >
+                  <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                  </div> 
+            </div>
+        </div> 
+
+
+
+        <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" placeholder="Email Address" formControlName="email"[ngClass]="{ 'is-invalid': f.email.errors && f.email.touched}" >
+               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors">give a proper mail address</div>
+                </div> 
+        </div>
+
+        <div class="form-group">  
+          <label for="email">Contact</label>
+          <input type="number" class="form-control" placeholder="Mobile Number" formControlName="mobile"
+           >
+        
+           
+        </div>
+
+       <div class="form-row">
+         <div class="col-md-6"> 
+           <label for="email">Age</label>
+          <input type="number" class="form-control" formControlName="age" placeholder="Age" [ngClass]="{ 'is-invalid': f.age.errors && f.age.touched}" > 
+               <div *ngIf="f.age.touched && f.age.errors" class="invalid-feedback">
+                        <div *ngIf="f.age.errors.max ||f.age.errors.min">Age must be in range 18-45</div>
+                </div> 
+
+         </div>
+         <div class="col-md-6">
+           <label for="city">City</label>
+          <input type="text" class="form-control" formControlName="city" placeholder="City"> 
+         </div> 
+        </div> 
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="text" class="form-control" onfocus="(this.type='date')" formControlName="dob"  onblur="(this.type='text')" placeholder="Date of Birth" >    
+        </div>
+         
+        <div class="form-row">
+        
+        </div> 
+
+         <div class="form-group text-center">
+            <button [disabled]="profileForm.invalid" class="btn btn-md btn-success my-2 mx-auto">  
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Save
+            </button>  
+         </div>
+
+    
+      </div>
+
+    </div>
+    <!-- end of the class row-->
+  </form>
+</div>
