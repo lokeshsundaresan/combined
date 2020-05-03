@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../interface/user';
 import { UserService } from '../api_services/user_control/_user.service';
 import { Router } from '@angular/router';
-import { Design } from 'api_services/design.service';
+import { Design } from '../api_services/design.service';
 
 @Component({
   selector: 'my-app',

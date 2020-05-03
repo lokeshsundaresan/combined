@@ -15,8 +15,8 @@ import { ProfileService } from "../api_services/user_control/profile.service";
 import { Jwt } from "../api_services/jwt.service";
 import { ErrorInterceptor } from "../api_services/error.service";
 import { RegisterComponent } from "../pages/register/register.component";
-import { EditProfileComponent } from 'pages/edit-profile/edit-profile.component';
-import { Design } from 'api_services/design.service';
+import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
+import { Design } from '../api_services/design.service';
 
 
 @NgModule({
