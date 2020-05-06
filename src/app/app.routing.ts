@@ -4,6 +4,10 @@ import { LoginComponent } from "../pages/login/login.component";
 import { RegisterComponent } from "../pages/register/register.component";
 import { AuthGuard } from "../api_services/user_control/auth.guard";
 import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
+import { ProfileComponent } from '../component/profile/profile.component';
+import { Component } from '@angular/core';
+import { AboutProfileComponent } from 'pages/about-profile/about-profile.component';
+
 
 const routes: Routes = [
   { path: "",
@@ -17,8 +21,12 @@ const routes: Routes = [
     component: RegisterComponent,
     pathMatch: "full" },
   {
+    path:"profile",
+    component:ProfileComponent,children:[{path:"about",component:AboutProfileComponent},{path:'',component:AboutProfileComponent}]},
+  {
     path:"edit-profile",
-    component:EditProfileComponent},
+    component:EditProfileComponent
+  },
   { path:"**", redirectTo:''}
 ];
 

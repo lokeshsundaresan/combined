@@ -1,0 +1,43 @@
+form
+{
+    border:2px groove whitesmoke;
+    background-color:#FFFAFA;
+    opacity: 0.8;
+    box-shadow: 5px 5px 2px grey;
+}
+.quotes
+{
+    font-weight: 600;
+}
+.form-group label,.form-row label{
+    color:#009da0;
+    font-weight: 600;
+}
+.form-control
+{
+    border:none;   
+    border-bottom: 3px solid #009da0;
+    outline: none;
+    font-weight: 700;
+    color:rgba(0, 0,0, 0.87);
+    box-shadow: 2px 2px 4px transparent;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  form:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: 50s;
+  }

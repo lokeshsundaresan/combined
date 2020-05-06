@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     {
       this.loginForm=this.fb.group({
         username:['',Validators.required],
-        password:['',[Validators.required, Validators.minLength(6)]]
+        password:['',[Validators.required]]
       });
       this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
@@ -51,10 +51,7 @@ export class LoginComponent implements OnInit {
              },error=>{
                  this.loading=false;
                  this.submitted=false;
-                this.loginForm=this.fb.group({
-                      username:['',Validators.required],
-                      password:['',[Validators.required, Validators.minLength(6)]]
-                    });
+                this.loginForm.reset();
              }
            )
     }

@@ -15,9 +15,7 @@ export class Design {
 
     menutoggle(chan?:any)
     {
-        console.log(chan);
         this.isMenuCollapsed.next(chan)
-        console.log("Service called");
     }
     
 }

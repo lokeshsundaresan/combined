@@ -1,7 +1,9 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, OnDestroy } from '@angular/core';
 import { UserService } from '../../api_services/user_control/_user.service';
 import { User } from 'interface/user';
 import { Design } from '../../api_services/design.service';
+import { ProfileService } from 'api_services/user_control/profile.service';
+import { first } from 'rxjs/operators';
 
 @Component({
     selector: 'side-navbar',
@@ -9,20 +11,34 @@ import { Design } from '../../api_services/design.service';
     styleUrls: ['./side-navbar.component.css']
 })
 
-export class SideNavbar implements OnInit {
+export class SideNavbar implements OnInit , OnDestroy{
+
     currentUser:User
     ismenu=false;
-    constructor(private user:UserService,private design:Design) {
+    profileData:User
+
+    constructor(private user:UserService,private design:Design,private prf:ProfileService) {
         this.user.currentUser.subscribe(data=>{
             this.currentUser=data;
         });
         this.design.isMenuCollapsed.subscribe(
-            data=>{console.log("fuck you bitch"+data);
+            data=>{
                    this.ismenu=data}
         );
      }
 
-    ngOnInit(): void { }
+    ngOnInit(){ 
+
+        this.prf.ProfileUser.pipe(first())
+                .subscribe(
+                    data=>{this.profileData=data;}
+                )
+
+    }
+    ngOnDestroy()
+    {
+        this.profileData=null;
+    }
 
   
 }

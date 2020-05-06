@@ -1,0 +1,31 @@
+.card-title,h6
+{
+    color:#009da0 !important;
+    font-weight: 600;
+}
+.box h6
+{
+    text-transform: capitalize;
+}
+.box p
+{
+    text-transform: capitalize;
+    padding:0 10px;
+    color:rgba(0,0,0, 0.87);
+    font-family: "Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+.card-header
+{
+    background-color: #ff586b;
+    color:snow;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.dropdown-divider
+{
+    border-top:2px solid grey;
+}

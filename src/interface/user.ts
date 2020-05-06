@@ -3,13 +3,13 @@ export  class User{
     id: number;
     username: string;
     password: string;
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
     token: string;
+     bio:string;
     email:string;
-    mobile_no:number;
-    age:number;
     city:string;
     dob:Date;
+    gender:string;
     profilepic:File;
 }

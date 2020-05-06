@@ -1,8 +1,8 @@
-<nav class="navbar top-navigation navbar-expand-lg navbar-light" *ngIf="currentUser">
-       <!--brand-->
+<nav class="navbar top-navigation navbar-expand-md navbar-light" *ngIf="currentUser">
+       
        <!--Toogler-->
        <a type="button" [ngbTooltip]="menu"
-               aria-controls="" (click)="toolme()">
+                (click)="toolme()">
        <span class="navbar-toggler-icon"></span></a>
 
        <!--Navigation-->
@@ -28,12 +28,12 @@
             </a>
              <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="profile">
               <a ngbDropdownItem  routerLinkActive="active"  routerLink="/profile"><span class="fa fa-user pr-3" aria-hidden="true"></span>My Profile</a>
-              <a ngbDropdownItem routerLink="/edit-profile"  routerLinkActive="active"><span class="far fa-edit pr-3"></span>Edit Profile</a>
-              <a ngbDropdownItem href="#"><span class="fas fa-key pr-3" aria-hidden="true"></span>Change Password</a>
-              <a ngbDropdownItem href="#"><span class="far fa-envelope pr-3"></span> Inbox</a>
-              <a class="dropdown-item"><span class="fas fa-cog pr-3"></span>Setting</a>
+              <a ngbDropdownItem routerLink="/edit-profile"  routerLinkActive="active"><span class="fa fa-edit pr-3"></span>Edit Profile</a>
+              <a ngbDropdownItem routerlink="['/']"    routerLinkActive="active"><span class="fas fa-key pr-3"></span>Change Password</a>
+              <a ngbDropdownItem routerLink="['/']" routerLinkActive="active" ><span class="fa fa-envelope pr-3"></span> Inbox</a>
+              <a ngbDropdownItem routerLink="['/']" routerLinkActive="active"><span class="fas fa-cog pr-3"></span>Setting</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item"><span class="fas fa-running pr-3"></span>Log Out</a>
+              <a ngbDropdownItem (click)="logout()"><span class="fas fa-running pr-3" ></span>Log Out</a>
             </div>            
           </li>
       </ul>

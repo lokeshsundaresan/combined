@@ -11,7 +11,7 @@ import { Design } from '../../api_services/design.service';
 })
 export class Navbar implements OnInit {
     istoogle=false;
-    currentUser:User
+    currentUser:User;
     constructor(private user:UserService,private design:Design) {
         this.user.currentUser.subscribe(data=>{
             this.currentUser=data;
@@ -22,20 +22,21 @@ export class Navbar implements OnInit {
 
     toolme()
     {
+        /* this method is used to toogle the menubar */
         if(this.istoogle)
         {
             this.istoogle=false;
-            console.log("clicked me");
             this.design.menutoggle(this.istoogle);
 
         }
         else
         {
             this.istoogle=true;
-            console.log("clicked me");
             this.design.menutoggle(this.istoogle);
         }
-
-
+    }
+    logout()
+    {
+        this.user.logout();
     }
 }

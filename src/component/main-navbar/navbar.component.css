@@ -1,14 +1,7 @@
 .top-navigation
 {
-    max-width: 100%;
-    background-color:bisque;
-}
-.top-navigation .navbar-brand-img,
-.top-navigation .nav-brand>img
-{
-    width: 20%;
-    max-width: 30%;
-    max-height:3rem;
+    background-color:#3ca2e0;
+    cursor: pointer;
 }
 .top-navigation .navbar-nav .nav-item
 {
@@ -36,4 +29,14 @@
 {
     font-size: 28px !important;
     margin-top:3px !important;
+}
+.dropdown-menu-right a:hover
+{
+    background-color:#009da0 !important;
+    color:whitesmoke;
+}
+.dropdown-menu-right .active
+{
+    background-color:#009da0 !important;
+    color:whitesmoke;
 }

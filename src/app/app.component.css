@@ -1,0 +1,10 @@
+.content
+{
+    background: url(../assets/img/brand/background.jpg);
+    background-blend-mode: screen;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    max-width: 100%;
+}

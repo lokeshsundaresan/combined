@@ -14,6 +14,7 @@ export class ProfileService implements HttpInterceptor{
    public ProfileUser:Observable<User>
 
    _getProfile='https://blog-1.lokeshvirtusa.repl.co/getprofile';
+   _updateProfile='https://blog-1.lokeshvirtusa.repl.co/updateProfile';
   
   intercept(request:HttpRequest<any>,next:HttpHandler)
   {
@@ -34,6 +35,14 @@ export class ProfileService implements HttpInterceptor{
                        this.ProfileUserSubject.next(user);
                        localStorage.setItem('User', JSON.stringify(user));
                      }));
+  }
+  updateProfile(profile:User)
+  {
+    return this.http.post<any>(this._updateProfile,profile)
+                     .pipe(map (prof=>{
+                        this.ProfileUserSubject.next(prof);
+                        localStorage.setItem('User',JSON.stringify(prof));
+                     }))
   }
 
 }

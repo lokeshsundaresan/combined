@@ -1,45 +1,62 @@
+.avatar
+{
+    width:100px;
+    height:100px;
+    border:7px solid whitesmoke;
+    border-radius: 80%; 
+}
+.profile-img
+{
+    margin: auto !important;
+    background-color:#ff586b;
+    color: whitesmoke;
+    opacity: 0.9;
+    font-weight: 600;
+    background-blend-mode: screen,overlay;
+}
+.form-tab .card
+{
+    margin-bottom:3rem ;
+    opacity: 0.9;
+}
+.profile-tab .card
+{
+    margin:1rem 0;
+    opacity: 0.9;
+}
+.card-header
+{
+    background-color:#ff586b;
+    color:whitesmoke;
+    font-weight: 600;
+}
+.form-group label,.form-row label{
+    color:#009da0;
+    font-weight: 600;
+}
 .form-control
 {
-         
-      border-top-style: hidden;
-      border-right-style: hidden;
-      border-left-style: hidden;
-      border-bottom-style: groove;
-      margin-bottom: 4%;
+    border:none;   
+    border-bottom: 3px solid #009da0;
+     outline: none;
+     font-weight: 600;
+     color:rgba(0, 0,0, 0.87);
+     box-shadow: 2px 2px 4px transparent;
 }
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-.file
+.list-group .active
 {
-  position:relative;
-  overflow: hidden;
-  width:100%;
-  border:none;
-  border-radius: 0;
-  background-color: 
- #212529b8;
- font-size: 16px;
-
+    background-color: #009da0 !important;
+    color:whitesmoke;
+    font-weight: 600;
+    cursor: pointer;
 }
-.file input{
-  position: absolute;
-  opacity:0;
-  top:0%;
-  right:0;
-}
-.form-row
+.list-group
 {
-  margin-bottom:1%;
+    cursor: pointer;
 }
-label{
-  margin-left:2%
-}
-.form-outer
+.list-group .list-group-item:hover
 {
-    background-color: skyblue;
+    background-color: #009da0 !important;
+    color:whitesmoke;
+    font-weight: 600;
 }

@@ -15,8 +15,9 @@ import { ProfileService } from "../api_services/user_control/profile.service";
 import { Jwt } from "../api_services/jwt.service";
 import { ErrorInterceptor } from "../api_services/error.service";
 import { RegisterComponent } from "../pages/register/register.component";
-import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
 import { Design } from '../api_services/design.service';
+import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
+import { ProfileModule } from '../component/profile/profile.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { Design } from '../api_services/design.service';
     FormsModule,
     NgbModule,
     appRoutingModule,
+    ProfileModule,
     HttpClientModule,
   
   ],
@@ -36,7 +38,7 @@ import { Design } from '../api_services/design.service';
     DashBoard,
     LoginComponent,
     RegisterComponent,
-    EditProfileComponent
+    EditProfileComponent,
   ],
   providers: [
     UserService,Design,
