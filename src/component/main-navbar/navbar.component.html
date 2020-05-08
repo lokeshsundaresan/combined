@@ -13,7 +13,10 @@
           </form>
           <!--Nav items-->
           <li class="nav-item">
-            <a class="nav-link" routerLink="/home" [ngbTooltip]="fullscreen" routerLinkActive="active"><i class="material-icons">fullscreen</i></a>
+            <a class="nav-link"  [ngbTooltip]="fullscreen" routerLinkActive="active" (click)="fullscreen()"><i class="material-icons">fullscreen</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/friends']" routerLinkActive="active" [ngbTooltip]="friends"><i class="material-icons">group</i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [ngbTooltip]="chat"><i class="material-icons">chat_bubble_outline</i></a>
@@ -44,5 +47,6 @@
         <ng-template #fullscreen >Full Screen</ng-template>
         <ng-template #search >Search Here friends and messages</ng-template>
         <ng-template #menu>Menu</ng-template>
+        <ng-template #friends>Friends</ng-template>
         
 </nav>

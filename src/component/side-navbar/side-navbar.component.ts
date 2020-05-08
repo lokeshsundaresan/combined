@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable, OnDestroy } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UserService } from '../../api_services/user_control/_user.service';
 import { User } from 'interface/user';
 import { Design } from '../../api_services/design.service';
@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
     styleUrls: ['./side-navbar.component.css']
 })
 
-export class SideNavbar implements OnInit , OnDestroy{
+export class SideNavbar implements OnInit{
 
     currentUser:User
     ismenu=false;
@@ -23,21 +23,20 @@ export class SideNavbar implements OnInit , OnDestroy{
         });
         this.design.isMenuCollapsed.subscribe(
             data=>{
-                   this.ismenu=data}
+                   this.ismenu=data;
+                    setTimeout(() => {
+                        this.ngOnInit();
+                    }, 1000);
+                }
         );
+       
      }
-
-    ngOnInit(){ 
-
-        this.prf.ProfileUser.pipe(first())
-                .subscribe(
-                    data=>{this.profileData=data;}
-                )
-
-    }
-    ngOnDestroy()
+    ngOnInit()
     {
-        this.profileData=null;
+        this.prf.ProfileUser.pipe(first())
+        .subscribe(
+            data=>{this.profileData=data;}
+        )
     }
 
   

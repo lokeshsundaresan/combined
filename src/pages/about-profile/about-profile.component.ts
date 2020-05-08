@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ProfileService } from 'api_services/user_control/profile.service';
 import { User } from 'interface/user';
 import { first } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./about-profile.component.css']
 })
 export class AboutProfileComponent implements OnInit,OnDestroy {
- profileData:User;
+  @Input() profileData:User;
   constructor(private user:ProfileService) { }
 
   ngOnInit() {

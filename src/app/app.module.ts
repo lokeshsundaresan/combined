@@ -18,6 +18,7 @@ import { RegisterComponent } from "../pages/register/register.component";
 import { Design } from '../api_services/design.service';
 import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
 import { ProfileModule } from '../component/profile/profile.module';
+import { FriendsComponent } from 'component/friends/friends.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ProfileModule } from '../component/profile/profile.module';
     LoginComponent,
     RegisterComponent,
     EditProfileComponent,
+    FriendsComponent
   ],
   providers: [
     UserService,Design,

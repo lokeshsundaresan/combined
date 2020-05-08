@@ -25,7 +25,6 @@ export class ProfileService implements HttpInterceptor{
   {
     this.ProfileUserSubject=new BehaviorSubject<User>(JSON.parse(localStorage.getItem('User')));
     this.ProfileUser=this.ProfileUserSubject.asObservable();
-  
   }
 
   getProfileDetails(User:User)
@@ -41,6 +40,7 @@ export class ProfileService implements HttpInterceptor{
     return this.http.post<any>(this._updateProfile,profile)
                      .pipe(map (prof=>{
                         this.ProfileUserSubject.next(prof);
+                        this.ProfileUser=this.ProfileUserSubject;
                         localStorage.setItem('User',JSON.stringify(prof));
                      }))
   }

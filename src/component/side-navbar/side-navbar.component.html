@@ -14,8 +14,8 @@
               <div class="card ">
                 <div class="card-block text-center">
                     <img src="../../assets/img/brand/profile.jpg" class="avatar pb-1">
-                    <h6 class="card-title pb-1">{{profileData.username}}</h6>
-                    <p class="card-subtitle">{{profileData.email}}</p>
+                    <h6 class="card-title pb-1" *ngIf=profileData.username>{{profileData.username}}</h6>
+                    <p class="card-subtitle" *ngIf=profileData.email>{{profileData.email}}</p>
                 </div>
                 <div class="card-footer text-center">
                     <ng-template #UserProfile >Profile</ng-template>
@@ -34,22 +34,22 @@
              <!--Navigation-->
                 <ul class="navbar-nav navigation">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/login" routerLinkActive="active"><i class="material-icons">home</i>Home</a>
+                        <a class="nav-link" routerLink="/login" routerLinkActive="active"><i class="fas fa-home px-2"></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/login" routerLinkActive="active"><i class="material-icons">policy</i>About Us</a>
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fas fa-users px-2" aria-hidden="true"></i>Friends</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fab fa-rocketchat"></i>Chat With us</a>
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fa fa-user-plus px-2" aria-hidden="true"></i>Friend Requests</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fas fa-cog"></i>Setting</a>
+                        <a class="nav-link" routerLink="/login" routerLinkActive="active"><i class="fas fa-user-shield px-2"></i>About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="material-icons">feedback</i>Feedback</a>
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active"><i class="fab fa-rocketchat px-2"></i>Reports</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/login" routerLinkActive="active"><i class="fas fa-question-circle"></i>Help</a>
+                        <a class="nav-link" routerLink="/login" routerLinkActive="active"><i class="fas fa-question-circle px-2"></i>Help</a>
                     </li>
                 </ul>              
             </div>

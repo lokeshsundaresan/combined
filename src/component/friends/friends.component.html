@@ -1,0 +1,20 @@
+<div class="container">
+   <div class="row">
+     <!--col-md-4-->
+      <div class="col-md-6 col-lg-4" *ngFor="let item of list">
+        <!--Profile Card-->
+          <div class="card my-3">
+            <div class="card-img-top py-3">
+              <img src="../../assets/img/brand/profile.jpg" class="avatar">
+            </div>
+            <div class="card-body mt-0 pt-0 text-center">
+              <h6><a class="card-title" (click)="open(item)">{{item.username}}</a></h6>
+              <button class="btn btn-frd btn-sm mx-2">Add Friend</button>
+              <button class="btn btn-msg btn-sm mx-2">Message</button>
+            </div>
+          </div>
+        <!--end of profile card-->
+      </div>
+    </div>
+</div>
+

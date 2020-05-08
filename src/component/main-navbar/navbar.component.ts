@@ -39,4 +39,8 @@ export class Navbar implements OnInit {
     {
         this.user.logout();
     }
+    fullscreen()
+    {
+       
+    }
 }
