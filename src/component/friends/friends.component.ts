@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
-import { UserService } from 'api_services/user_control/_user.service';
-import { User } from 'interface/user';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit,Input } from '@angular/core';
+import { UserService } from '../../api_services/user_control/_user.service';
+import { User } from '../../interface/user';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-friends',
@@ -9,7 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./friends.component.css']
 })
 export class FriendsComponent implements OnInit {
-  @Input() profile;
+
   list:User[]=[];
   constructor(private users:UserService,private modalService:NgbModal) { }
 
@@ -21,7 +21,7 @@ export class FriendsComponent implements OnInit {
 
   open(viewProfile:User)
   {
-    const modalRef = this.modalService.open(modal, { ariaLabelledBy: 'view-profile',scrollable: true,size:'lg' });
+    const modalRef = this.modalService.open(modal, { ariaLabelledBy: 'view-profile',scrollable:true,size:'lg' });
     modalRef.componentInstance.profile=viewProfile;
      
   }
@@ -34,5 +34,8 @@ export class FriendsComponent implements OnInit {
 
 })
 export class modal{
+
+  @Input() profile:User;
+  constructor(public activeModal: NgbActiveModal) { }
 
 }

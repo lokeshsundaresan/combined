@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { User } from 'interface/user';
-import { ProfileService } from 'api_services/user_control/profile.service';
+import { User } from '../../interface/user';
+import { ProfileService } from '../../api_services/user_control/profile.service';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 

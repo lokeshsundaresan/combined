@@ -9,12 +9,10 @@
 }
 .box p
 {
-    text-transform: capitalize;
     padding:0 10px;
     color:rgba(0,0,0, 0.87);
     font-family: "Montserrat","Segoe UI","Helvetica Neue",Arial,sans-serif;
     font-weight: 400;
-    font-style: italic;
 }
 
 

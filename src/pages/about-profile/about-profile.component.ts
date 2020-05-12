@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { ProfileService } from 'api_services/user_control/profile.service';
-import { User } from 'interface/user';
+import { ProfileService } from '../../api_services/user_control/profile.service';
+import { User } from '../../interface/user';
 import { first } from 'rxjs/operators';
 
 @Component({
