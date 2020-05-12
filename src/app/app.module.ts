@@ -18,7 +18,7 @@ import { RegisterComponent } from "../pages/register/register.component";
 import { Design } from '../api_services/design.service';
 import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
 import { ProfileModule } from '../component/profile/profile.module';
-import { FriendsComponent } from '../component/friends/friends.component';
+import { FriendsComponent, modal } from '../component/friends/friends.component';
 
 
 @NgModule({
@@ -40,7 +40,7 @@ import { FriendsComponent } from '../component/friends/friends.component';
     LoginComponent,
     RegisterComponent,
     EditProfileComponent,
-    FriendsComponent
+    FriendsComponent,modal
   ],
   providers: [
     UserService,Design,
@@ -56,6 +56,7 @@ import { FriendsComponent } from '../component/friends/friends.component';
     },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[mod]
 })
 export class AppModule {}
