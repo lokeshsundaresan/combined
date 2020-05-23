@@ -19,6 +19,8 @@ import { Design } from '../api_services/design.service';
 import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
 import { ProfileModule } from '../component/profile/profile.module';
 import { FriendsComponent, modal } from '../component/friends/friends.component';
+import { ChatsComponent } from '../component/chats/chats.component';
+
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { FriendsComponent, modal } from '../component/friends/friends.component'
   ],
   declarations: [
     AppComponent,
+    ChatsComponent,
     SideNavbar,
     Navbar,
     DashBoard,
@@ -57,6 +60,6 @@ import { FriendsComponent, modal } from '../component/friends/friends.component'
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
-  entryComponents:[mod]
+  entryComponents:[modal]
 })
 export class AppModule {}

@@ -5,9 +5,9 @@ import { RegisterComponent } from "../pages/register/register.component";
 import { AuthGuard } from "../api_services/user_control/auth.guard";
 import { EditProfileComponent } from '../pages/edit-profile/edit-profile.component';
 import { ProfileComponent } from '../component/profile/profile.component';
-import { Component } from '@angular/core';
 import { AboutProfileComponent } from '../pages/about-profile/about-profile.component';
 import { FriendsComponent } from '../component/friends/friends.component';
+import { ChatsComponent } from 'component/chats/chats.component';
 
 
 const routes: Routes = [
@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path:"friends",
     component:FriendsComponent
+  },
+  {
+   path:"chats",
+   component:ChatsComponent
   },
   { path:"**", redirectTo:''}
 ];

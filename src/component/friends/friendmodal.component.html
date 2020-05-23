@@ -1,3 +1,6 @@
+<div class="modal-header modal-lg">
+	<h4 class="modal-title pull-left"> Profile </h4>
+</div>
     <div class="modal-body"  id="view-profile">
       <div class="row">
         <!--profile pic-->
@@ -20,11 +23,11 @@
                    <p>{{profile.username}}</p>
                   </div> 
                   <div class="box">
-                   <h6> <i class="fa fa-user-plus px-2" aria-hidden="true"></i> first name</h6>
+                   <h6><i class="fa fa-user-plus px-2" aria-hidden="true"></i>first name</h6>
                    <p >{{profile.firstname}}</p>
                   </div> 
                   <div class="box">
-                   <h6><i class="fa fa-lastfm px-2" aria-hidden="true"></i> last name</h6>
+                   <h6><i class="fa fa-lastfm px-2" aria-hidden="true"></i>last name</h6>
                    <p>{{profile.lastname}}</p>
                   </div> 
                 </div>
@@ -33,7 +36,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="box">
                       <h6><i class="fa fa-birthday-cake px-2"></i> Birthday</h6>
-                      <p>{{profile.dob}}</p>
+                      <p>{{profile.dob | date}}</p>
                      </div> 
                      <div class="box">
                       <h6> <i class="fas fa-globe px-2"></i> Lives in</h6>
