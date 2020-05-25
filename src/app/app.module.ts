@@ -20,6 +20,8 @@ import { EditProfileComponent } from '../pages/edit-profile/edit-profile.compone
 import { ProfileModule } from '../component/profile/profile.module';
 import { FriendsComponent, modal } from '../component/friends/friends.component';
 import { ChatsComponent } from '../component/chats/chats.component';
+import { ChatService } from '../api_services/chat.service';
+
 
 
 
@@ -46,7 +48,7 @@ import { ChatsComponent } from '../component/chats/chats.component';
     FriendsComponent,modal
   ],
   providers: [
-    UserService,Design,
+    UserService,Design,ChatService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ProfileService,

@@ -7,25 +7,30 @@
             </div>
         </div>
         <div class="col-sm-8 chat col-md-7 clear-fix">
-            <div class="chat-header clearfix">
+            <div class="chat-header clearfix" *ngIf="selectedchats">
                 <img src="../../assets/img/brand/profile.jpg" class="avatar" alt="avatar" />
                 
                 <div class="chat-about">
-                  <div class="chat-with">Chat with Vincent Porter</div>
-                  <div class="chat-num-messages">already 1,902 messages</div>
+                  <div class="chat-with" >{{selectedchats}}</div>
+                  <div class="chat-num-messages"></div>
                 </div>
                 <i class="fa fa-star"></i>
-            </div>           
+            </div> 
+            <div *ngIf="!selectedchats">
+                <div class="chat-about">
+                    <div class="chat-with text-center my-4 text-light font-weight-bolder">Welcome to Dreams Chats</div>
+                </div>
+            </div>          
         </div>
     </div>
     <div class="row chatter-box">
         <div class="col-sm-4 chat-list col-md-5">
 
             <ul class="list">
-                <li class="clearfix" *ngFor="let item of list">
+                <li class="clearfix" *ngFor="let item of list" (click)=selectchat(item)>
                   <img src="../../assets/img/brand/profile.jpg" alt="avatar" />
                   <div class="about">
-                    <div class="name">{{item.username}}</div>
+                    <div class="name" >{{item.username}}</div>
                     <div class="status">
                       <i class="fa fa-circle online"></i> online
                     </div>
@@ -34,42 +39,37 @@
             </ul> 
 
         </div>
-        <div class="col-sm-8 col-md-7 coversation-list">
+        <div class="col-sm-8 col-md-7 coversation-list" *ngIf="onshow">
 
                   
-      <div class="chat-history">
+      <div class="chat-history" >
         <ul>
-          <li class="clearfix">
-            <div class="message-data text-right">
-              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
-              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+          <li class="clearfix" *ngFor="let item of messageArray">
+            <div class="message-data text-right"  *ngIf="item.sender == sender">
+              <span class="message-data-time" >{{item.date | date:day}}</span> &nbsp; &nbsp;
+              <span class="message-data-name" >{{item.sender}}</span> <i class="fa fa-circle me"></i>
               
             </div>
-            <div class="message other-message float-right">
-              Hi Vincent, how are you? How is the project coming along?
+            <div class="message other-message float-right text-justify"  *ngIf="item.sender ==sender">
+                     {{item.message}}
             </div>
           </li>
           
-          <li>
-            <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-              <span class="message-data-time">10:12 AM, Today</span>
+          <li *ngFor="let item of messageArray">
+            <div class="message-data"  *ngIf="item.sender != sender" >
+              <span class="message-data-name"> {{item.receiver}}</span>
+              <span class="message-data-time">{{item.date | date}}</span>
             </div>
-            <div class="message my-message">
-              Are we meeting today? Project has been already finished and I have results to show you.
+            <div class="message my-message text-justify"  *ngIf="item.sender != sender">
+              {{item.message}}
             </div>
           </li>
         </ul>
         </div>
 
         <div class="chat-message clearfix">
-            <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
-                    
-            <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-file-image-o"></i>
-            
-            <button>Send</button>
-    
+            <textarea class="float-left w-75" name="message-to-send" id="message-to-send" [(ngModel)]="message" (keydown.enter)=sendmessage() placeholder ="Type your message" rows="1"></textarea>
+            <button class="float-right btn btn-md bg-danger " (click)="sendmessage()">Send</button>
           </div>
          
     </div>

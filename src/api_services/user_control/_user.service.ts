@@ -39,6 +39,7 @@ export class UserService implements HttpInterceptor{
     return this.http.get<any>(this._getUser); 
    }
    register(user: User) {
+     console.log(user);
         return this.http.post<any>(this._registerData, user );
     }
     verify(user: User){      
