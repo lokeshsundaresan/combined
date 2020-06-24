@@ -9,6 +9,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,RouterModule
   ],
-  declarations: [ProfileComponent,AboutProfileComponent,ProfileTags]
+  declarations: [ProfileComponent,AboutProfileComponent,ProfileTags,ProfileComponent]
 })
 export class ProfileModule { }

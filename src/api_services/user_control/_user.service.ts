@@ -58,9 +58,10 @@ export class UserService implements HttpInterceptor{
     logout()
     {
       localStorage.removeItem('currentUser');
-      localStorage.removeItem('User');
+      localStorage.removeItem('UserDetails');
       this.currentUserSubject.next(null);
         this.router.navigate(['/login']);
+
     }
 
     storeTokens(temp:User)

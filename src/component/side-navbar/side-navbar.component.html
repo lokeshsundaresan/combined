@@ -13,7 +13,7 @@
              <div class="dropdown-divider"></div>
               <div class="card ">
                 <div class="card-block text-center">
-                    <img src="../../assets/img/brand/profile.jpg" class="avatar pb-1">
+                    <img [src]="profilepic" class="avatar pb-1">
                     <h6 class="card-title pb-1" *ngIf=profileData.username>{{profileData.username}}</h6>
                     <p class="card-subtitle" *ngIf=profileData.email>{{profileData.email}}</p>
                 </div>

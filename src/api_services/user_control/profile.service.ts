@@ -13,7 +13,7 @@ export class ProfileService implements HttpInterceptor{
    private ProfileUserSubject: BehaviorSubject<User>;
    public ProfileUser:Observable<User>
 
-   _getProfile='https://blog-1.lokeshvirtusa.repl.co/getprofile';
+   _getProfile='https://chats--lokeshvirtusa.repl.co/currentUser';
    _updateProfile='https://blog-1.lokeshvirtusa.repl.co/updateProfile';
   
   intercept(request:HttpRequest<any>,next:HttpHandler)
@@ -23,17 +23,29 @@ export class ProfileService implements HttpInterceptor{
 
   constructor(private http: HttpClient,private router:Router)
   {
-    this.ProfileUserSubject=new BehaviorSubject<User>(JSON.parse(localStorage.getItem('User')));
+    this.ProfileUserSubject=new BehaviorSubject<User>(JSON.parse(localStorage.getItem('UserDetails')));
     this.ProfileUser=this.ProfileUserSubject.asObservable();
   }
 
-  getProfileDetails(User:User)
+  getProfileDetails(user:User)
   {
-    return this.http.post<any>(this._getProfile,User)
-                     .pipe(map(user=>{
-                       this.ProfileUserSubject.next(user);
-                       localStorage.setItem('User', JSON.stringify(user));
+    return this.http.post<any>(this._getProfile,user)
+                     .pipe(map(userdetails=>{
+                       this.ProfileUserSubject.next(userdetails);
+                       this.ProfileUser=this.ProfileUserSubject;
+                       localStorage.setItem('UserDetails', JSON.stringify(userdetails));
                      }));
+  }
+  updateCoverPic(image:any,username:string)
+  {
+    const formData = new FormData();
+    formData.append('coverpic',image);
+    formData.append('username',username);
+
+    return this.http.post<any>('https://chats--lokeshvirtusa.repl.co/coverpic', formData).pipe(map(user=>{
+      this.getProfileDetails(JSON.parse(localStorage.getItem('currentUser'))).subscribe();
+    }));
+
   }
   updateProfile(profile:User)
   {
@@ -41,8 +53,19 @@ export class ProfileService implements HttpInterceptor{
                      .pipe(map (prof=>{
                         this.ProfileUserSubject.next(prof);
                         this.ProfileUser=this.ProfileUserSubject;
-                        localStorage.setItem('User',JSON.stringify(prof));
+                        localStorage.setItem('UserDetails',JSON.stringify(prof));
                      }))
   }
+  profilepic(image:any,username:string)
+  {
+    const formData = new FormData();
+    formData.append('img',image);
+    formData.append('username',username)
 
+    return this.http.post<any>('https://chats--lokeshvirtusa.repl.co/file', formData).pipe(map(user=>{
+      this.getProfileDetails(JSON.parse(localStorage.getItem('currentUser'))).subscribe();
+    }));
+    
+   
+  }
 }

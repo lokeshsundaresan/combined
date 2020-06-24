@@ -1,6 +1,12 @@
 <div class="card">
-    <img class="card-img-top" [src]="imageurl" alt="Card image">
-    <img src="../../assets/img/brand/profile.jpg" class="avatar">
+    <img class="card-img-top" [src]="coverpic" alt="Card image">
+    <div class="bottom-right">
+      <div class="file btn btn-lg btn-primary">
+       <i class="	fa fa-tasks pr-2"></i> Change Photo
+          <input type="file" name="image" (change)="selectImage($event)" />
+      </div>
+    </div>
+    <img [src]="photo" class="avatar">
    
     <div class="card-body">
       <div class="row">

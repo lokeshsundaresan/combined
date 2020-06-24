@@ -27,7 +27,7 @@
           <!--Ngb Dropdown-->
           <li class="nav-item"  ngbDropdown  [open]="false">
             <a class="nav-link"  [ngbTooltip]="UserProfile" routerLinkActive="active" id="profile" display="Profile">
-              <img src="../../assets/img/brand/profile.jpg" ngbDropdownToggle class="avatar-profile">
+              <img [src]="profilepic" ngbDropdownToggle class="avatar-profile">
             </a>
              <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="profile">
               <a ngbDropdownItem  routerLinkActive="active"  routerLink="/profile"><span class="fa fa-user pr-3" aria-hidden="true"></span>My Profile</a>

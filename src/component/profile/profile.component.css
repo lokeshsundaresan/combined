@@ -20,3 +20,30 @@ a
     color:#ff586b!important;
     font-weight: 600;
 }
+.card
+{
+    position: relative;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 20%;
+    right: 2.5%;
+  }
+
+  .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -10%;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background-color:#009da0 !important;
+    color:whitesmoke;
+}
+.file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}

@@ -1,8 +1,8 @@
 <!--Side NavBar-->
-<side-navbar></side-navbar>
+<side-navbar [profilepic]="profilepic"></side-navbar>
 <div [ngClass]="{'main-content': isMenu}" class="content">
   <!--Top NavBar-->
-  <nav-bar></nav-bar>
+  <nav-bar  [profilepic]="profilepic"></nav-bar>
   <!--pages-->
   <router-outlet></router-outlet> 
 </div>

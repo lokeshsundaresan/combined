@@ -12,13 +12,16 @@
     <div class="col-md-5 col-sm-12 profile-tab">
       <div class="profile-bar">
             <!--profile image section-->
-            <div class="profile-img text-center py-3">
-              <img src="../../assets/img/brand/profile.jpg" class="avatar">
-              <h6 class="mt-2">{{profileData.username}}</h6>
-              <p>{{profileData.firstName}}</p>
+            <div class="profile-img text-center">
+              <img [src]="photo">
+              <div class="file btn btn-lg btn-primary">
+              change photo
+                <input type="file" name="image" (change)="selectImage($event)" />
+            </div>
+
             </div>
          <!--Account Information-->
-         <div class="row">
+         <div class="row my-5">
           <div class="col-md-12">
            <div class="card">
               <div class="card-header">Account Info <i class="fas fa-barcode float-right"></i></div>
@@ -45,7 +48,7 @@
             </div> 
             </div>
 
-               <!--profile menu bar-->
+   <!--         profile menu bar
             <div class="list-group" role="tablist">
               <a class="list-group-item list-group-item-action active" aria-controls="home"><i class="fas fa-edit px-3"></i>Edit Profile</a>
               <a class="list-group-item list-group-item-action " ><i class="fa fa-info-circle px-3"></i> About</a>
@@ -54,6 +57,7 @@
               <a class="list-group-item list-group-item-action" ><i class="fa fa-tags px-3"></i>Timeline</a>
               <a class="list-group-item list-group-item-action" ><i class="fa fa-bell  px-3" aria-hidden="true"></i>Notification</a>
             </div>
+          -->
       </div>         
     </div>
 
@@ -128,7 +132,7 @@
               <!--submit button-->
               <div class="form-group float-right " *ngIf="canmodify">
                 <button [disabled]="profileForm.invalid"  type="submit" class="btn btn-md btn-success my-1 mx-2">  
-                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                <span  class="spinner-border spinner-border-sm mr-1"></span>
                         Save
                 </button> 
                 <button class="btn btn-md btn-secondary my-1 mx-3" (click)="canedit()"> Cancel</button> 

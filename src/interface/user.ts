@@ -11,5 +11,6 @@ export  class User{
     city:string;
     dob:Date;
     gender:string;
-    profilepic:File;
+    img:Buffer;
+    coverpic:Buffer;
 }
