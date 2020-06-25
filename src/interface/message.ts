@@ -1,12 +1,12 @@
 export class MessageModel
 {
-    _id:String;
-    sender:String;
-    receiver:String;
+    _id:string;
+    sender:string;
+    receiver:string;
     date:Date;
-    message:String;
+    message:string;
 
-    constructor(sender:String,receiver:String,message:String)
+    constructor(sender:string,receiver:string,message:string)
     {
         this.sender=sender;
         this.receiver=receiver;

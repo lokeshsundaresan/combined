@@ -13,11 +13,11 @@ export class ChatsComponent implements OnInit {
 
   list:User[]=[];
   onshow=false;
-  message:String;
-  selectedchats:String;
-  messageArray:Array<{MessageModel}>=[];
+  message:string;
+  selectedchats:string;
+  messageArray:MessageModel[]=[];
   messagesent:MessageModel;
-  sender:String;
+  sender:string;
   loadMessage=[];
 
   constructor(private users:UserService,private chat:ChatService) {

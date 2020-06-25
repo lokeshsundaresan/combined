@@ -46,7 +46,7 @@
         <ul>
           <li class="clearfix" *ngFor="let item of messageArray">
             <div class="message-data text-right"  *ngIf="item.sender == sender">
-              <span class="message-data-time" >{{item.date | date:day}}</span> &nbsp; &nbsp;
+              <span class="message-data-time" >{{item.date | date}}</span> &nbsp; &nbsp;
               <span class="message-data-name" >{{item.sender}}</span> <i class="fa fa-circle me"></i>
               
             </div>
